@@ -168,8 +168,8 @@ def handle_message(event):
 	if text == '/bye':
 		if isinstance(event.source, SourceGroup):
                    sendMessage('selamat tinggal {} ;)'.format(getProfileName(sender)))
-                   line_bot_api.leave_group(event.source.group_id)
-                elif isinstance(event.source, SourceRoom):
+		   line_bot_api.leave_group(event.source.group_id)
+	        elif isinstance(event.source, SourceRoom):
                      sendMessage('selamat tinggal {} ;)'.format(getProfileName(sender)))
                      line_bot_api.leave_room(event.source.room_id)
 	        else:
