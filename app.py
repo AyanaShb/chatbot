@@ -89,14 +89,14 @@ def handle_message(event):
     gid = event.source.sender_id
     line = line_bot_api
     if text == 'quickReply':
-		items = [quickItem('Hello','Hello')]
-		sendMessageWithQuickReply('hi',items)
+       items = [quickItem('Hello','Hello')]
+       sendMessageWithQuickReply('hi',items)
     if text == '/creator':
-		sendMessage('Hello Kampank!')
+       sendMessage('Hello Kampank!')
     if text == '/bye':
        if isinstance(event.source, SourceGroup):
-                sendMessage('{} selamat tinggal ;)'.format(getProfileName(sender)))
-                line.leave_group(event.source.group_id)
+          sendMessage('{} selamat tinggal ;)'.format(getProfileName(sender)))
+          line.leave_group(event.source.group_id)
     if text == '/help':
        helpmsg =   "\n    » Line Chat Bot♫ «" + "\n\n" + \
                         "Public Feature"        + "\n" + \
