@@ -1,0 +1,9 @@
+line-bot-sdk
+flask
+requests
+bs4
+lxml
+googletrans
+pafy
+youtube-dl
+pytube
