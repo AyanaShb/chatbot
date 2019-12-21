@@ -104,13 +104,12 @@ def handle_message(event):
                         "01.   - /instagram:(name)" + "\n" + \
                         "02.   - /twitter:(name)"    + "\n" + \
                         "03.   - /facebook:(name)"   + "\n" + \
-                        "Settings Bot"        + "\n" + \
+                        "Admin Feature"        + "\n" + \
                         "04.   - /mode:(1/2/3)" + "\n" + \
                         "05.   - /silent:(on/off)"    + "\n" + \
                         "05.   - /showuid:(on/off)"    + "\n" + \
                         "05.   - /setadmin:(uid)"    + "\n" + \
                         "05.   - /bye:(on/off)"    + "\n" + \
-                        "\nversion : 7.0"     + \
                         "\nmaker : ayana"
        ghgg = {"type": "bubble",
                    "size": "kilo",
