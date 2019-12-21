@@ -47,25 +47,20 @@ def callback():
     try:handler.handle(body, signature)
     except InvalidSignatureError:abort(400)
     return 'OK'
-@handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
-	text = event.message.text.lower()
-	sender = event.source.user_id
-	gid = event.source.sender_id
-	line = line_bot_api
+
 #===============================================================================[ ARSYBAI FUNC ]
 def getProfileName(sender):
-    profile = line.get_profile(sender).display_name
+    profile = line_bot_api.get_profile(sender).display_name
     return profile
 def getProfileStatus(sender):
-    profile = line.get_profile(sender).status_message
+    profile = line_bot_api.get_profile(sender).status_message
     return profile
 def sendMessage(tx):
     ggg = TextSendMessage(text=tx)
-    return(line.reply_message(event.reply_token,ggg))
+    return(line_bot_api.reply_message(event.reply_token,ggg))
 def sendAudio(audio):
 		message = AudioSendMessage(original_content_url=audio,duration=240000)
-		line.reply_message(event.reply_token, message)
+		line_bot_api.reply_message(event.reply_token, message)
 def sendVideo(thumb, video): 
 	        message = VideoSendMessage(original_content_url=thumb,preview_image_url=video)
 	        line_bot_api.reply_message(event.reply_token, message)
@@ -87,23 +82,22 @@ def sendMessageWithQuickReply(tx,items):
         message = TextSendMessage(text=tx,quick_reply=QuickReply(items=items))
         line_bot_api.reply_message(event.reply_token, message)
 #===============================================================================[ STARTO ]
-if text == 'quickReply':
-		"""
-		This is for send Text message with quick reply
-		"""
+@handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    text = event.message.text.lower()
+    sender = event.source.user_id
+    gid = event.source.sender_id
+    line = line_bot_api
+    if text == 'quickReply':
 		items = [quickItem('Hello','Hello')]
 		sendMessageWithQuickReply('hi',items)
-
-if text == '/creator':
-		"""
-		this is example if u just want to send a text message
-		"""
+    if text == '/creator':
 		sendMessage('Hello Kampank!')
-if text == '/bye':
-   if isinstance(event.source, SourceGroup):
-           sendMessage('{} selamat tinggal ;)'.format(getProfileName(sender)))
-           line.leave_group(event.source.group_id)
-if text == '/help':
+    if text == '/bye':
+       if isinstance(event.source, SourceGroup):
+                sendMessage('{} selamat tinggal ;)'.format(getProfileName(sender)))
+                line.leave_group(event.source.group_id)
+    if text == '/help':
        helpmsg =   "\n    » Line Chat Bot♫ «" + "\n\n" + \
                         "Public Feature"        + "\n" + \
                         "01.   - /bye" + "\n" + \
@@ -141,7 +135,7 @@ if text == '/help':
                                        "separatorColor": "#000000"}}}
        message = [ghgg] #use []
        sendFlex(alt='THIS IS FLEX MESSAGE', contents=message)
-if text == 'flex':
+    if text == 'flex':
 		"""
 		This is example for send a flex message
 		( template in flex.py file )
@@ -149,7 +143,7 @@ if text == 'flex':
 		message = [flex.contoh()] #use []
 		sendFlex(alt='THIS IS FLEX MESSAGE', contents=message)
 
-if text == 'carousel':
+    if text == 'carousel':
 		"""
 		This is example for send a flex message carousel
 		( template in flex.py file )
