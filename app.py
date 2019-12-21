@@ -169,11 +169,11 @@ def handle_message(event):
 		if isinstance(event.source, SourceGroup):
                    sendMessage('selamat tinggal {} ;)'.format(getProfileName(sender)))
                    line_bot_api.leave_group(event.source.group_id)
-	        elif isinstance(event.source, SourceRoom):
+                elif isinstance(event.source, SourceRoom):
                      sendMessage('selamat tinggal {} ;)'.format(getProfileName(sender)))
                      line_bot_api.leave_room(event.source.room_id)
-	        else:
-		    sendMessage("can't leave from 1:1 chat ;)")
+                else:
+                    sendMessage("can't leave from 1:1 chat ;)")
 		
 	if text == 'hi2':
 		"""
