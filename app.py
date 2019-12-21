@@ -55,6 +55,7 @@ def callback():
 def handle_message(event):
     text = event.message.text #simplify for receove message
     sender = event.source.user_id #get user_id
+    print(sender)
     gid = event.source.sender_id #get group_id
 #=====[ LEAVE GROUP OR ROOM ]==========[ ARSYBAI ]======================
     if text == '/creator':
