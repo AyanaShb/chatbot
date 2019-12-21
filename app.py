@@ -87,24 +87,24 @@ def sendMessageWithQuickReply(tx,items):
         message = TextSendMessage(text=tx,quick_reply=QuickReply(items=items))
         line_bot_api.reply_message(event.reply_token, message)
 #===============================================================================[ STARTO ]
-	if text == 'quickReply':
+if text == 'quickReply':
 		"""
 		This is for send Text message with quick reply
 		"""
 		items = [quickItem('Hello','Hello')]
 		sendMessageWithQuickReply('hi',items)
 
-	if text == '/creator':
+if text == '/creator':
 		"""
 		this is example if u just want to send a text message
 		"""
 		sendMessage('Hello Kampank!')
-	if text == '/bye':
+if text == '/bye':
 		if isinstance(event.source, SourceGroup):
            sendMessage('{} selamat tinggal ;)'.format(getProfileName(sender)))
            line.leave_group(event.source.group_id)
-	if text == '/help':
-	   helpmsg =   "\n    » Line Chat Bot♫ «" + "\n\n" + \
+if text == '/help':
+       helpmsg =   "\n    » Line Chat Bot♫ «" + "\n\n" + \
                         "Public Feature"        + "\n" + \
                         "01.   - /bye" + "\n" + \
                         "01.   - /gid" + "\n" + \
@@ -141,7 +141,7 @@ def sendMessageWithQuickReply(tx,items):
                                        "separatorColor": "#000000"}}}
        message = [ghgg] #use []
        sendFlex(alt='THIS IS FLEX MESSAGE', contents=message)
-	if text == 'flex':
+if text == 'flex':
 		"""
 		This is example for send a flex message
 		( template in flex.py file )
@@ -149,7 +149,7 @@ def sendMessageWithQuickReply(tx,items):
 		message = [flex.contoh()] #use []
 		sendFlex(alt='THIS IS FLEX MESSAGE', contents=message)
 
-	if text == 'carousel':
+if text == 'carousel':
 		"""
 		This is example for send a flex message carousel
 		( template in flex.py file )
@@ -163,5 +163,3 @@ import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-
-"""ALHAMDULILLAH"""
