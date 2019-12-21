@@ -126,10 +126,10 @@ def handle_message(event):
                                                                       "size": "lg",
                                                                       "color": "#000000"}],
                                                         "borderWidth": "5px",
-                                                        "borderColor": "#FAF0E6"}],
+                                                        "borderColor": "#DC143C"}],
                                           "borderColor": "#00FFFF",
                                           "borderWidth": "5px"}],
-                            "backgroundColor": "#D2691E"},
+                            "backgroundColor": "#DC143C"},
                    "styles": {"body": {"separator": True,
                                        "separatorColor": "#000000"}}}
        message = [ghgg] #use []
