@@ -87,7 +87,7 @@ def handle_message(event):
         message = TextSendMessage(text=tx,quick_reply=QuickReply(items=items))
         line_bot_api.reply_message(event.reply_token, message)
 #===============================================================================[ STARTO ]
-    if text == 'quickReply':
+    if text == 'quickreply':
        items = [quickItem('Hello','Hello')]
        sendMessageWithQuickReply('hi',items)
     if text == '/creator':
@@ -129,7 +129,7 @@ def handle_message(event):
                                                         "borderColor": "#FAF0E6"}],
                                           "borderColor": "#00FFFF",
                                           "borderWidth": "5px"}],
-                            "backgroundColor": "#FAF0E6"},
+                            "backgroundColor": "#D2691E"},
                    "styles": {"body": {"separator": True,
                                        "separatorColor": "#000000"}}}
        message = [ghgg] #use []
