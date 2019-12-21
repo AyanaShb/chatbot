@@ -67,10 +67,10 @@ def handle_message(event):
         message = AudioSendMessage(original_content_url=audio,duration=240000)
         line_bot_api.reply_message(event.reply_token, message)
     def sendVideo(thumb, video): 
-	message = VideoSendMessage(original_content_url=thumb,preview_image_url=video)
-	line_bot_api.reply_message(event.reply_token, message)
+        message = VideoSendMessage(original_content_url=thumb,preview_image_url=video)
+        line_bot_api.reply_message(event.reply_token, message)
     def sendMessageV2(lst):
-	return(line_bot_api.reply_message(event.reply_token,lst))
+        return(line_bot_api.reply_message(event.reply_token,lst))
     def carouselMapping(contents):
         this = {"type": "carousel","contents": contents}
         return this
