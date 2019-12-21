@@ -113,7 +113,7 @@ def handle_message(event):
                         "\nversion : 7.0"     + \
                         "\nmaker : ayana"
        ghgg = {"type": "bubble",
-                   "size": "micro",
+                   "size": "kilo",
                    "body": {"type": "box",
                             "layout": "vertical",
                             "contents": [{"type": "box",
