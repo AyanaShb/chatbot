@@ -136,21 +136,11 @@ def handle_message(event):
        message = [ghgg] #use []
        sendFlex(alt='THIS IS FLEX MESSAGE', contents=message)
     if text == 'flex':
-		"""
-		This is example for send a flex message
-		( template in flex.py file )
-		"""
-		message = [flex.contoh()] #use []
-		sendFlex(alt='THIS IS FLEX MESSAGE', contents=message)
-
+       message = [flex.contoh()] #use []
+       sendFlex(alt='THIS IS FLEX MESSAGE', contents=message)
     if text == 'carousel':
-		"""
-		This is example for send a flex message carousel
-		( template in flex.py file )
-		"""
-		message = [flex.contoh(), flex.contoh(), flex.contoh(), flex.contoh(), flex.contoh()]
-		#just add more template :3 (Max 10)
-		sendFlex(alt='THIS IS CAROUSEL MESSAGE', contents=message)
+       message = [flex.contoh(), flex.contoh(), flex.contoh(), flex.contoh(), flex.contoh()]
+       sendFlex(alt='THIS IS CAROUSEL MESSAGE', contents=message)
 
 #===============================================================================[ END ]
 import os
