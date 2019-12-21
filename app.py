@@ -66,7 +66,7 @@ def handle_message(event):
 	def sendAudio(audio):
 		message = AudioSendMessage(original_content_url=audio,duration=240000)
 		line.reply_message(event.reply_token, message)
-	def sendVideo(thumb, video):
+	def sendVideo(thumb, video): 
 	        message = VideoSendMessage(original_content_url=thumb,preview_image_url=video)
 	        line_bot_api.reply_message(event.reply_token, message)
 	def sendMessageV2(lst):
