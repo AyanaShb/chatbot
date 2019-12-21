@@ -74,7 +74,7 @@ def handle_message(event):
 	"""
 	line = line_bot_api
 #===============================================================================[ ARSYBAI FUNC ]
-	def getProfile(sender):
+	def getProfileName(sender):
 		profile = line_bot_api.get_profile(sender).display_name
 		"""
 		argument:
@@ -165,7 +165,16 @@ def handle_message(event):
 		this is example if u just want to send a text message
 		"""
 		sendMessage('Hello Kampank!')
-
+	if text == '/bye':
+		if isinstance(event.source, SourceGroup):
+                   sendMessage('selamat tinggal {} ;)'.format(getProfileName(sender)))
+                   line_bot_api.leave_group(event.source.group_id)
+                elif isinstance(event.source, SourceRoom):
+                     sendMessage('selamat tinggal {} ;)'.format(getProfileName(sender)))
+                     line_bot_api.leave_room(event.source.room_id)
+	        else:
+		    sendMessage("can't leave from 1:1 chat ;)")
+		
 	if text == 'hi2':
 		"""
 		this is example if you want to send more than one message
@@ -190,7 +199,7 @@ def handle_message(event):
 		"""
 		message = [flex.contoh(), flex.contoh(), flex.contoh(), flex.contoh(), flex.contoh()]
 		#just add more template :3 (Max 10)
-		sendFlex(alt='THIS IS CAROUSEL MESSAGE', content=message)
+		sendFlex(alt='THIS IS CAROUSEL MESSAGE', contents=message)
 
 #===============================================================================[ END ]
 import os
