@@ -100,7 +100,7 @@ if text == '/creator':
 		"""
 		sendMessage('Hello Kampank!')
 if text == '/bye':
-		if isinstance(event.source, SourceGroup):
+   if isinstance(event.source, SourceGroup):
            sendMessage('{} selamat tinggal ;)'.format(getProfileName(sender)))
            line.leave_group(event.source.group_id)
 if text == '/help':
