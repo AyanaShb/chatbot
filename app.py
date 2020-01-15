@@ -192,8 +192,8 @@ def handle_message(event):
     if text.startswith("/say:"):
        separate = text.split(":")
        number = text.replace(separate[0] + ":","")
-          sendMessage('{} selamat tinggal ;)'.format(getProfileName(sender)))
-          line.leave_group(event.source.group_id)
+       sendMessage('{} selamat tinggal ;)'.format(getProfileName(sender)))
+       line.leave_group(event.source.group_id)
     if text == 'help':
        ghgg = {
   "type": "bubble",
