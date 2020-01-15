@@ -50,7 +50,6 @@ def callback():
 @handler.add(FollowEvent)
 @handler.add(FollowEvent)
 @handler.add(JoinEvent)
-def joinMessage():
     dat = {
   "type": "bubble",
   "hero": {
