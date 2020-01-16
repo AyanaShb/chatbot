@@ -94,7 +94,7 @@ def handle_message(event):
        sendMessage('Hello Kampank!')
     if text == '/bye':
        if isinstance(event.source, SourceGroup):
-          sendMessage('{} selamat tinggal ;)'.format(getProfileName(sender)))
+          sendMessage('{} selamat tiinggal ;)'.format(getProfileName(sender)))
           line.leave_group(event.source.group_id)
     if text.startswith("/say:"):
        separate = text.split(":")
