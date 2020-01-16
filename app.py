@@ -48,7 +48,9 @@ def callback():
     except InvalidSignatureError:abort(400)
     return 'OK'
 @handler.add(JoinEvent)
-print("hhh")
+def jhjhjh(event):
+    if isinstance(event.source, SourceGroup):
+          line_bot_api.leave_group(event.source.group_id)
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text.lower()
