@@ -48,8 +48,8 @@ def callback():
     except InvalidSignatureError:abort(400)
     return 'OK'
 @handler.add(JoinEvent)
-def jhjhjh(event):
-    return 'Hi there.. this is working :D'
+def handle_join_event(event):
+    print(event)
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text.lower()
