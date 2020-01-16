@@ -49,7 +49,96 @@ def callback():
     return 'OK'
 @handler.add(JoinEvent)
 def handle_join_event(event):
-    print(event)
+    if isinstance(event.source, SourceGroup):
+       ghgg = {
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://i.pinimg.com/originals/b4/a5/b4/b4a5b49dc155887837eab74e4ab545a4.png",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "http://linecorp.com/"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "Game Lobby",
+        "size": "lg",
+        "weight": "bold",
+        "color": "#000000"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "Daftar",
+              "text": "/daftar"
+            },
+            "style": "primary",
+            "color": "#00cec9"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "Main",
+              "text": "/main"
+            },
+            "style": "primary",
+            "color": "#00cec9"
+          }
+        ],
+        "spacing": "md"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "saldoku",
+              "text": "/saldo"
+            },
+            "style": "primary",
+            "color": "#00cec9"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "Reset",
+              "text": "/reset"
+            },
+            "style": "primary",
+            "color": "#00cec9"
+          }
+        ],
+        "spacing": "md"
+      }
+    ],
+    "spacing": "md"
+  },
+  "styles": {
+    "body": {
+      "backgroundColor": "#0984e3"
+    }
+  }
+}
+       message = [ghgg] #use []
+       sendFlex(alt='....', contents=message)
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text.lower()
