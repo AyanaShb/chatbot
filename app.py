@@ -49,7 +49,7 @@ def callback():
     return 'OK'
 @handler.add(JoinEvent)
 def jhjhjh(event):
-    print(event)
+    print("kontolllll")
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text.lower()
