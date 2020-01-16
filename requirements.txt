@@ -7,5 +7,3 @@ googletrans
 pafy
 youtube-dl
 pytube
-json
-time
