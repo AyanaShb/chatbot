@@ -101,6 +101,89 @@ def handle_message(event):
        number = text.replace(separate[0] + ":","")
        sendMessage('{} selamat tinggal ;)'.format(getProfileName(sender)))
        line.leave_group(event.source.group_id)
+    if text == '/main':
+       data = {
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "image",
+        "url": "https://i.pinimg.com/originals/b4/a5/b4/b4a5b49dc155887837eab74e4ab545a4.png",
+        "position": "absolute",
+        "size": "full",
+        "aspectRatio": "1:1",
+        "aspectMode": "fit",
+        "offsetTop": "-55px",
+        "offsetBottom": "0px",
+        "offsetStart": "0px",
+        "offsetEnd": "0px"
+      },
+      {
+        "type": "text",
+        "text": "Pilih yang mana?",
+        "size": "lg",
+        "weight": "bold",
+        "color": "#FFFFFF",
+        "offsetTop": "-15px"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "Buta 40k",
+              "text": "/buta40k"
+            },
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "Buta 100k",
+              "text": "/buta100k"
+            },
+            "style": "primary"
+          }
+        ],
+        "spacing": "md"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "Buta 500k",
+              "text": "/buta500k"
+            },
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "Buta 1jt",
+              "text": "/buta1jt"
+            },
+            "style": "primary"
+          }
+        ],
+        "spacing": "md"
+      }
+    ],
+    "spacing": "md"
+  }
+}
+       message = [data] #use []
+       sendFlex(alt='....', contents=message)
     if text == 'help':
        ghgg = {
   "type": "bubble",
@@ -190,7 +273,7 @@ def handle_message(event):
   }
 }
        message = [ghgg] #use []
-       sendFlex(alt='THIS IS FLEX MESSAGE', contents=message)
+       sendFlex(alt='....', contents=message)
     if text == 'flex':
        message = [flex.contoh()] #use []
        sendFlex(alt='THIS IS FLEX MESSAGE', contents=message)
