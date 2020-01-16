@@ -9,5 +9,3 @@ youtube-dl
 pytube
 json
 time
-humanize
-humanfriendly
