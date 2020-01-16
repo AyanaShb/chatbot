@@ -137,8 +137,8 @@ def handle_join_event(event):
     }
   }
 }
-       message = [ghgg] #use []
-       sendFlex(alt='....', contents=message)
+       message = FlexSendMessage(alt_text="....",contents={"type": "carousel","contents": [ghgg]})
+       line_bot_api.reply_message(event.reply_token,message)
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text.lower()
