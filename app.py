@@ -55,7 +55,7 @@ def handle_message(event):
     line = line_bot_api
 #===============================================================================[ ARSYBAI FUNC ]
     def getProfileName(sender):
-        profile = line_bot_api.get_profile(sender).display_name
+        profile = line_bot_api.get_profile(sender).picture_url
         return profile
     def getProfileStatus(sender):
         profile = line_bot_api.get_profile(sender).status_message
