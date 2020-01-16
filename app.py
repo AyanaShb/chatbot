@@ -49,7 +49,7 @@ def callback():
     return 'OK'
 @handler.add(JoinEvent)
 def jhjhjh(event):
-    print("jjj")
+    print(event)
 def handle_message(event):
     text = event.message.text.lower()
     sender = event.source.user_id
