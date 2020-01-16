@@ -49,9 +49,7 @@ def callback():
     return 'OK'
 @handler.add(JoinEvent)
 def jhjhjh(event):
-    if isinstance(event.source, SourceGroup):
-          line_bot_api.leave_group(event.source.group_id)
-@handler.add(MessageEvent, message=TextMessage)
+    print("jjj")
 def handle_message(event):
     text = event.message.text.lower()
     sender = event.source.user_id
